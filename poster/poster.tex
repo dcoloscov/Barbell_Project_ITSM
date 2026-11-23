@@ -16,6 +16,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\newcommand{\Tbar}{\overline{\mkern1.5mu T\mkern1mu\rule{0pt}{1.85ex}}} % for a nice T_bar
 \tikzposterlatexaffectionproofoff
 
 % One accent, a pale shade of it, white paper. Nothing else.
@@ -76,7 +77,7 @@
 
   \vspace{4mm}
   
-  \textbf{Settling:} Let \(\Delta(n) = d_{\text{TV}}(P^n(v_0, \cdot), \pi)\) be the total variation distance from equilibrium. It drops within a few steps to about 0.5 (spreads quickly inside \(A\)), then it decays with rate \(|\lambda_2|\) per step, \(\lambda_2\) the second-largest eigenvalue of \(P\) (Lecture Notes, Theorem~7.8):
+  \textbf{Settling:} Let \(\Delta(n) = d_{\text{TV}}(P^n(v_0, \cdot), \pi)\) be the total variation distance from equilibrium. Within a few steps the message spreads over \(A\), where \(\pi(A) = \tfrac12\), so \(\Delta \approx \tfrac12\). Then it decays with rate \(|\lambda_2|\) per step, the second-largest eigenvalue modulus of \(P\) (Lecture Notes, Theorem~7.8):
   \[\Delta(n) \approx \frac{1}{2}|\lambda_2|^{n}\]
   \innerblock{Theory, \(k = 4\)}{\centering \(E[T_{\mathrm{cross}}] = 16 \qquad  \lambda_2 = 0.887\)}
 }
@@ -87,34 +88,33 @@
     \textbf{Crossing time}
     \begin{center}
         \includegraphics[width=0.95\linewidth]{images/cross_plot.pdf}\\[-6mm]
-        {\small Running mean \(\overline{T}_N\) of the crossing time for \(k = 4\) approaches \(E[T_{\mathrm{cross}}] = k^2 = 16\) as the number of independent walkers \(N\) grows. The band is \(\pm2\)~s.e.\par}
+        {\small Running mean \(\Tbar_N\) of the crossing time for \(k = 4\) approaches \(E[T_{\mathrm{cross}}] = k^2 = 16\) as the number of independent walkers \(N\) grows. The band is \(\pm2\)~s.e.\par}
   \end{center}
   \begin{center}\small
   \begin{tabular}{rcccc}
     \toprule
-    $k$ & $N$ & Simulated $\overline{T}_N$ & Theory $k^2$ & Diff.\ (s.e.) \\
+    $k$ & $N$ & Simulated $\Tbar_N$ & Theory $k^2$ & Diff.\ (s.e.) \\
     \midrule
     \csname @@input\endcsname tables/table_cross
     \bottomrule
   \end{tabular}\\
   \vspace{4mm}
-  Simulated \(\overline{T}_N\) against \(k^2\) for selected \(k\); Diff.\ is (simulated \(-\) theory) in standard errors, all falling within \(\pm 2\).
+  Simulated \(\Tbar_N\) against \(k^2\) for selected \(k\); Diff.\ is (simulated \(-\) theory) in standard errors, all falling within \(\pm 2\).
   \end{center}
 
   \textbf{Settling}
   \begin{center}
         \includegraphics[width=0.95\linewidth]{images/dist_plot.pdf}\\[-6mm]
         % {\small Distance to equilibrium \(\Delta(n)\) for \(k = 4\): simulation (\(R = 30\) independent runs of \(N = 10^4\) walkers) matches the exact curve within 1~s.e.\ at every step and decays at rate \(\lambda_2 = 0.887\) as the theory predicted. \(t_{\mathrm{mix}} = 7\) is the first \(n\) with \(\Delta(n) \leq \tfrac{1}{4}\).\par}
-        {\small Distance to equilibrium \(\Delta(n)\) for \(k = 4\): simulation (\(R = 30\) runs of \(N = 10^4\) walkers, \(\pm 2\)~s.e.\ whiskers) follows the exact curve and decays at rate \(\lambda_2 = 0.887\). \(t_{\mathrm{mix}} = 7\) is the first \(n\) with \(\Delta(n) \leq \tfrac{1}{4}\), the threshold of Levin et al.~(§4.5).\par}
+        {\small Distance to equilibrium for \(k = 4\): the estimate \(\hat\Delta(n)\) (\(R = 30\) runs of \(N = 10^4\) walkers, \(\pm 2\)~s.e.\ whiskers) follows the exact \(\Delta(n)\) and decays at rate \(\lambda_2 = 0.887\). \(t_{\mathrm{mix}} = 7\) is the first \(n\) with \(\Delta(n) \leq \tfrac{1}{4}\), the threshold of Levin et al.~(§4.5).\par}
   \end{center}
 }
 
 \block{What remains for the paper}{
-  Check \(\pi(A) = \tfrac12\) from one long walk, with the s.e.\ by batch means; fit the decay to estimate \(\hat\lambda_2\) for each \(k\); explore the bias of the TV estimator near equilibrium.
-  \vspace{1.4mm}
+  Check \(\pi(A) = \tfrac12\) from one long walk (batch means s.e.); fit the decay to estimate \(\hat\lambda_2\); explore the TV estimator's bias near equilibrium; extend to multiple bridges.
+  \vspace{0.4mm}
   }
 \end{columns}
-
 \node[anchor=south west, xshift=8mm, yshift=8mm, font=\small, text=black!60, text width=0.95\textwidth, align=left]
   at (bottomleft) {Sources: F.~Richter, \emph{Stochastic Methods: Lecture Notes}
   (2026); S.~M.~Ross, \emph{Introduction to Probability Models} (2019); D.~A.~Levin, Y.~Peres, E.~L.~Wilmer, \emph{Markov Chains and Mixing Times} (2017).};

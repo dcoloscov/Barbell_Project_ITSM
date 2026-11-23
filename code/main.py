@@ -73,7 +73,7 @@ def cross_plot(T, t_exact, k):
 
     fig, ax = plt.subplots(figsize=(8.75, 5.625))
     ax.plot(m, run_mean, lw=1.5, label=r"Running mean $\overline{T}_N$")
-    ax.fill_between(m, lower, upper, alpha=0.3, label=r"$\pm 2$ SE")
+    ax.fill_between(m, lower, upper, alpha=0.3, label=r"$\pm 2$ s.e.")
     ax.axhline(t_exact, color="black", ls="--", label=rf"Theory $k^2 = {t_exact:.0f}$")
     ax.set_xscale("log")
     ax.set_ylim(bottom=0)
@@ -102,7 +102,7 @@ def distance_plot(rng):
     fig, ax = plt.subplots(figsize=(8.75, 5.625))
     ax.semilogy(n, Delta[:N_MAX + 1], lw=2, label=r"Exact $\Delta(n)$")
     ax.errorbar(n, D_mean, yerr=2 * D_se, fmt="o", ms=5, capsize=3,
-                label=r"Simulated $\hat\Delta(n) \pm 2\,$SE")
+                label=r"Simulated $\hat\Delta(n) \pm 2\,$s.e.")
     ax.semilogy(n, 0.5 * lam2**n, "--", color="gray",
                 label=rf"$\frac{{1}}{{2}}\lambda_2^{{\,n}}$,  $\lambda_2 = {lam2:.3f}$")
     ax.set_xlabel("Step $n$")
