@@ -4,7 +4,9 @@ Individual simulation project for *Introduction to Stochastic Methods* (USI, Aut
 
 **Model.** Two communities, each a complete graph $K_k$, joined by a single bridge edge.
 A message starts at an interior node $v_0$ and is passed at each step to a uniformly
-random neighbor (simple random walk). [Picture](poster/images/barbell.png)
+random neighbor (simple random walk). 
+
+  ![Barbell graph, k = 4](poster/images/barbell.png)
 
 
 **Questions.**
