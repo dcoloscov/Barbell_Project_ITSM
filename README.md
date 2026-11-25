@@ -12,8 +12,16 @@ random neighbor (simple random walk). [Picture](poster/images/barbell.pdf)
 2. How fast does the walk settle to its stationary distribution (mixing time)?
 
 **Results.**
-- [How the crossing time scales with k, with simulation vs. theory](poster/images/cross_plot.pdf)
-- [Mixing time / spectral gap behaviour](poster/images/dist_plot.pdf)
+
+- **Crossing time.** First-step analysis gives exactly $\mathbb{E}[T_{\text{cross}}] = k^2$. Simulations with $N = 10^4$ walkers for $k \in \{3, 4, 7, 8, 15\}$ match it within $\pm 2$ standard errors (e.g. $k = 15$: $226.6 \pm 2.3$ vs. $225$).
+
+  ![Running mean of the crossing time for k = 4](poster/images/cross_plot.png)
+
+- **Mixing.** For $k = 4$ the total variation distance to equilibrium decays as $\Delta(n) \approx \tfrac12 |\lambda_2|^n$ with $\lambda_2 = 0.887$, giving $t_{\text{mix}} = 7$ (threshold $1/4$). The simulated distance ($R = 30$ runs of $N = 10^4$ walkers) follows the exact curve.
+
+  ![Distance to equilibrium for k = 4](poster/images/dist_plot.png)
+
+Full poster: [poster/poster.pdf](poster/poster.pdf)
 
 
 Full poster: [poster/poster.pdf](poster/poster.pdf)
