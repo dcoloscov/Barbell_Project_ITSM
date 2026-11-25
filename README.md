@@ -23,9 +23,6 @@ random neighbor (simple random walk). [Picture](poster/images/barbell.pdf)
 
 Full poster: [poster/poster.pdf](poster/poster.pdf)
 
-
-Full poster: [poster/poster.pdf](poster/poster.pdf)
-
 ## Reproduce
 
 All parameters are set at the top of `code/main.py`.
