@@ -82,6 +82,7 @@ def cross_plot(T, t_exact, k):
     ax.legend(loc="upper right", fontsize="small")
     fig.tight_layout()
     fig.savefig("../poster/images/cross_plot.pdf")
+    fig.savefig("../poster/images/cross_plot.png", dpi=400)
     plt.close(fig)
 
 def distance_plot(rng):
@@ -115,6 +116,7 @@ def distance_plot(rng):
     ax.legend(loc="lower left", fontsize="small")
     fig.tight_layout()
     fig.savefig("../poster/images/dist_plot.pdf")
+    fig.savefig("../poster/images/dist_plot.png", dpi=400)
     plt.close(fig)
    
     report = sorted(set(N_REPORT) | {t_mix})
