@@ -12,8 +12,8 @@ random neighbor (simple random walk). [Picture](poster/images/barbell.pdf)
 2. How fast does the walk settle to its stationary distribution (mixing time)?
 
 **Results.**
-- [RESULT 1, e.g. how the crossing time scales with k, with simulation vs. theory](poster/images/cross_plot.pdf)
-- [RESULT 2, e.g. mixing time / spectral gap behaviour](poster/images/dist_plot.pdf)
+- [How the crossing time scales with k, with simulation vs. theory](poster/images/cross_plot.pdf)
+- [Mixing time / spectral gap behaviour](poster/images/dist_plot.pdf)
 
 
 Full poster: [poster/poster.pdf](poster/poster.pdf)
